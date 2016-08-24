@@ -1,0 +1,20 @@
+.login-portion{
+  padding:40px;
+}
+
+.register-portion{
+  padding:40px;
+}
+
+label{
+  margin-left: 15px;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}

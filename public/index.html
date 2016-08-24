@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WORDIST</title>
+  <meta charset="utf-8">
+  <meta name="description" content="wordist is an application for learning new words and understand them in your own pace">
+  <meta name="author" content="killerveee">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="javascripts/vue.js"></script>
+  <script src="javascripts/script.js"></script>
+  <link rel="icon" src="favicon.ico">
+  <link href="stylesheets/custom stylesheet.css" type="text/css" rel="stylesheet">
+  <link href="stylesheets/spectre.css" type="text/css" rel="stylesheet">
+  <link href="stylesheets/buttons.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+      <section class="navbar-section">
+          <a href="#" class="navbar-brand">WORDIST</a>
+      </section>
+      <section class="navbar-section">
+          <a href="#" class="btn btn-link">ABOUT</a>
+      </section>
+  </header>
+  <div class="container col-xs-12 col-lg-12">
+    <div class="columns col-xs-12 col-lg-12">
+      <div class="col-xs-1 col-md-1"></div>
+      <div id="login" class="login-portion  col-xs-5 col-lg-5">
+        <h2>{{ loginMessage }} </h2>
+        <div class=" col-xs-8 col-lg-12">
+            <input class="form-input input-lg col-xs-12 col-lg-12" type="text" id="username-box" placeholder="username" />
+            <br>
+            <input class="form-input input-lg col-xs-12 col-lg-12" type="password" id="password-box" placeholder="password" />
+        </div>
+        <br>
+        <label class="form-checkbox col-xs-12 col-lg-12 margin-left-15">
+            <input type="checkbox" />
+            <i class="form-icon col-xs-12 col-lg-12"></i> remember me
+        </label>
+        <br><br>
+        <a href="#" class="col-xs-12 col-lg-12 margin-left-15">( forgot password ? )</a>
+        <br><br>
+        <a href="#" class="button button-action button-pill ">LOGIN</a>
+      </div>
+      <div id="register" class="register-portion col-xs-8 col-lg-11">
+        <h2>{{ registerMessage }} </h2>
+        <div class=" col-xs-8 col-lg-12">
+            <input class="form-input input-lg col-xs-8 col-lg-8" type="text" id="username-box" placeholder="username" />
+            <br>
+            <input class="form-input input-lg col-xs-8 col-lg-8" type="password" id="password-box" placeholder="password" />
+            <br>
+            <input class="form-input input-lg col-xs-8 col-lg-8" type="email" id="mail-box" placeholder="yourmail@domain.com" />
+        </div>
+        <br><br>
+        <a href="#" class="button button-action button-pill ">SIGN UP</a>
+        <br><br><br>
+      </div>
+      <div class="col-xs-1 col-lg-1"></div>
+    </div>
+  </div>
+</body>
+</html>
