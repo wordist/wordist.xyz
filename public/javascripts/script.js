@@ -1,4 +1,5 @@
 window.onload = function(){
+
   new Vue({
     el: "#login",
     data:{
