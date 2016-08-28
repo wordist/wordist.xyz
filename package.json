@@ -35,5 +35,8 @@
     "test": "lab -a code -c",
     "test-tap": "lab -a code -r tap -o tests.tap",
     "test-cov-html": "lab -a code -r html -o coverage.html"
+  },
+  "devDependencies": {
+    "superagent": "^2.2.0"
   }
 }

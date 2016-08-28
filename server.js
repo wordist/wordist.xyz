@@ -42,14 +42,24 @@ const rethinkdbRegister = {
 
 var serverPlugins = [Vision, Inert, loutRegister, rethinkdbRegister];
 
-server.register(serverPlugins, function (err) {
+server.register(serverPlugins, (err) => {
   if (err) {
-    console.error('Failed loading plugins');
+    console.error('Failed loading plugins ' + err);
     process.exit(1);
   }
   server.route(initialiseRoutes);
-  server.start(function () {
-    console.log('Server running at:', server.info.uri);
+  server.initialize((err) => {
+    if (err) {
+      console.error('Failed initialize server ' + err);
+      process.exit(1);
+    }
+    server.start(function () {
+      if (err) {
+        console.error('Failed start server ' + err);
+        process.exit(1);
+      }
+      console.log('Server running at:', server.info.uri);
+    });
   });
 });
 
