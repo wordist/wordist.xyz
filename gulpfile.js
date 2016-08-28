@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 var ngrok = require('ngrok');
 
-// Environment variables to be set for bingo API
+// Environment variables to be set for wordist frontend
 var env = {
   DB_HOST : 'localhost',
   DB_PORT : '3306',
