@@ -1,0 +1,1 @@
+docker run --name wordist-rethink -v "$PWD:/data" -d -p 28015:28015 -p 8080:8080 rethinkdb

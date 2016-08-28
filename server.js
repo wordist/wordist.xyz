@@ -48,8 +48,11 @@ server.register(serverPlugins, function (err) {
     process.exit(1);
   }
   server.route(initialiseRoutes);
-  server.start(function () {
-    console.log('Server running at:', server.info.uri);
+  server.initialize((err) => {
+    console.log(err);
+    server.start(function () {
+      console.log('Server running at:', server.info.uri);
+    });
   });
 });
 
