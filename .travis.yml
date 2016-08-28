@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - "4.4.7"
+
+install:
+  - "npm install"
+
+script:
+  - "npm test"
+
+after_success:
+  - docker build -t="scriptnull/debian:build.travis.$TRAVIS_BUILD_NUMBER" .
+  - docker push scriptnull/debian:build.travis.$TRAVIS_BUILD_NUMBER
+  
