@@ -5,6 +5,8 @@ const Lout = require('lout');
 const Vision = require('vision');
 const initialiseRoutes = require('./init/initialiseRoutes');
 const path = require('path');
+const HapiRethinkdb = require('hapi-rethinkdb');
+
 const config = {
   connections: {
     routes: {
@@ -29,7 +31,18 @@ const loutRegister = {
   }
 };
 
-server.register([Vision, Inert, loutRegister], function (err) {
+const rethinkdbRegister = {
+  register: HapiRethinkdb,
+  options : {
+    host : 'localhost',
+    port : 28015,
+    db : 'wordist'
+  }
+};
+
+var serverPlugins = [Vision, Inert, loutRegister, rethinkdbRegister];
+
+server.register(serverPlugins, function (err) {
   if (err) {
     console.error('Failed loading plugins');
     process.exit(1);
