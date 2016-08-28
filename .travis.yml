@@ -26,3 +26,8 @@ after_success:
     docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push scriptnull/wordist.xyz:build.travis.$TRAVIS_BUILD_NUMBER;
     fi
+
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/045b8a28ca223dfbbf9f
