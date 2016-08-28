@@ -21,11 +21,7 @@ script:
   - "npm test"
 
 after_success:
-  - docker build -t="scriptnull/wordist.xyz:build.travis.$TRAVIS_BUILD_NUMBER" .
-  - if [ "$TRAVIS_BRANCH" == "master" -a "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push scriptnull/wordist.xyz:build.travis.$TRAVIS_BUILD_NUMBER;
-    fi
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./execute_non_pr.sh; fi'
 
 notifications:
   webhooks:
