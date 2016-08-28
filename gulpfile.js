@@ -8,7 +8,6 @@ var env = {
   DB_HOST : 'localhost',
   DB_PORT : '3306',
   LOG_DIR : 'logs',
-  JWT_SECRET : 'thambi-ithu-booth-pa',
   PORT : 3000
 };
 
