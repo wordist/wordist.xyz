@@ -1,5 +1,0 @@
-var config = {
-  JWT_SECRET : 'secret'
-};
-
-module.exports = config;
