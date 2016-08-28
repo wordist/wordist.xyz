@@ -24,7 +24,6 @@ describe('/api/v1/users endpoints', () => {
     };
     server.inject(request, (res) => {
       expect(res.statusCode).to.equal(200);
-      console.log('TES : '+ res.result)
       expect(res.result.username).to.equal(user.username);
       expect(res.result.password).to.equal(user.password);
       expect(res.result.email).to.equal(user.email);
