@@ -44,23 +44,4 @@ describe('/api/v1/users endpoints', () => {
           testFor(2, {id: 2, name: 'Vasanth'}, done);
       });
   });
-
-
-  it('POST /api/v1/users', (done) => {
-    var user = {
-      username: 'gooduser',
-      password: 'mypassword',
-      email: 'sample@wordist.xyz'
-    };
-    var request = {
-      method: 'POST',
-      url: '/api/v1/users',
-      payload: JSON.stringify(user)
-    };
-    server.inject(request, (res) => {
-      expect(res.statusCode).to.equal(200);
-      expect(res.result.payload).to.equal(user);
-      done();
-    });
-  });
 });
