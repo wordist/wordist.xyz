@@ -8,7 +8,7 @@ const describe = lab.describe;
 const it = lab.it;
 const expect = Code.expect;
 
-const server = require('../../server');
+const server = require('../../../server');
 
 describe('/api/v1/users endpoints', () => {
   describe('GET /api/v1/users', () => {
