@@ -2,13 +2,12 @@
 
 const Lab = require('lab');
 const Code = require('code');
-const superagent = require('superagent');
 
 const lab = exports.lab = Lab.script();
 const describe = lab.describe;
 const it = lab.it;
 const expect = Code.expect;
-
+const superagent = require('superagent');
 const API_URL = 'localhost:8081';
 
 describe('Basic Routes', function() {
