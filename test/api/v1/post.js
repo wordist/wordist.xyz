@@ -8,26 +8,26 @@ const describe = lab.describe;
 const it = lab.it;
 const expect = Code.expect;
 
+const superagent = require('superagent');
+const API_URL = 'localhost:8081';
 const server = require('../../../server');
 
 describe('/api/v1/users endpoints', () => {
   it('POST /api/v1/users', (done) => {
-    var user = {
+    var userPayload = {
       username: 'gooduser',
       password: 'mypassword',
       email: 'sample@wordist.xyz'
     };
-    var request = {
-      method: 'POST',
-      url: '/api/v1/users',
-      payload: JSON.stringify(user)
-    };
-    server.inject(request, (res) => {
-      expect(res.statusCode).to.equal(200);
-      expect(res.result.username).to.equal(user.username);
-      expect(res.result.password).to.equal(user.password);
-      expect(res.result.email).to.equal(user.email);
-      done();
-    });
+    
+    superagent
+      .post(API_URL + '/api/v1/users')
+      .send(userPayload)
+      .set('Accept', 'application/json')
+      .end(function(err, res) {
+        // Calling the end function will send the request
+        expect(res.statusCode).to.equal(200);
+        done();
+      });
   });
 });
