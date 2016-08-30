@@ -10,7 +10,7 @@ const expect = Code.expect;
 
 const superagent = require('superagent');
 const API_URL = 'localhost:8081';
-const server = require('../../../server');
+const server = require('../../../../server');
 
 describe('/api/v1/users endpoints', () => {
   it('POST /api/v1/users', (done) => {
