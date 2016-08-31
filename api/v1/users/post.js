@@ -7,7 +7,10 @@ module.exports = (request, reply) => {
   var conn = request.server.plugins['hapi-rethinkdb'].connection;
   // conn === this.rethinkdbConn;
   
-  const userPayload = request.payload;
+  let userPayload = request.payload;
+  
+  userPayload.created_at = new Date();
+  userPayload.updated_at = new Date();
   
   var options = {
     returnChanges: true
