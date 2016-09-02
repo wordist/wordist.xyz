@@ -15,13 +15,13 @@ install:
   - "npm install"
 
 script:
-  - node ./init/initDb.js
-  - node ./init/initTables.js
+  - node ./dev-scripts/initDb.js
+  - node ./dev-scripts/initTables.js
   - "npm start &"
   - "npm test"
 
 after_success:
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./execute_non_pr.sh; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./dev-scripts/execute_non_pr.sh; fi'
 
 notifications:
   webhooks:

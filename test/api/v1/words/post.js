@@ -10,10 +10,10 @@ const expect = Code.expect;
 
 const superagent = require('superagent');
 const API_URL = 'localhost:8081';
-const server = require('../../../../server');
+
 
 describe('/api/v1/words endpoints', () => {
-  
+
     function testFor(wordPayload, cb) {
       superagent
       .post(API_URL + '/api/v1/words')
@@ -28,8 +28,8 @@ describe('/api/v1/words endpoints', () => {
         expect(resJson.tags).to.equal(wordPayload.tags);
         cb();
       });
-    };
-    
+    }
+
     var wordPayloadArray = [{
         wordname: 'word1',
         userid: 'gooduser1',
@@ -43,7 +43,7 @@ describe('/api/v1/words endpoints', () => {
         userid: 'gooduser3',
         tags: ['tag3', 'tag3']
       }];
-  
+
     it('POST /api/v1/words', (done) => {
       testFor(wordPayloadArray[0], () => {
         testFor(wordPayloadArray[1], () => {

@@ -35,7 +35,10 @@
     "start": "node server.js",
     "test": "lab -a code -c",
     "test-tap": "lab -a code -r tap -o tests.tap",
-    "test-cov-html": "lab -a code -r html -o coverage.html"
+    "test-cov-html": "lab -a code -r html -o coverage.html",
+    "docker-rethink": "./dev-scripts/run_docker_rethink",
+    "init-db": "node ./dev-scripts/initDb.js",
+    "init-tables": "node ./dev-scripts/initTables.js"
   },
   "devDependencies": {
     "superagent": "^2.2.0"
