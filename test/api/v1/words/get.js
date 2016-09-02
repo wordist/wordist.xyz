@@ -11,11 +11,11 @@ const expect = Code.expect;
 const superagent = require('superagent');
 const API_URL = 'localhost:8081';
 
-describe('/api/v1/users endpoints', () => {
-  describe('GET /api/v1/users', () => {
+describe('/api/v1/words endpoints', () => {
+  describe('GET /api/v1/words', () => {
     it('handle naked request', (done) => {
       superagent
-        .get(API_URL + '/api/v1/users')
+        .get(API_URL + '/api/v1/words')
         .end((err, res) => {
           expect(res.statusCode).to.equal(200);
           done();
