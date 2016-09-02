@@ -40,7 +40,7 @@ module.exports = (request, reply) => {
           const errResponse = { error : err };
           reply(errResponse);
         }
-        // array of users
+        // array of words
         reply(wordResponseArray);
         });   
       },
