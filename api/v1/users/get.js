@@ -1,7 +1,7 @@
 'use strict';
 
 /* This file handles all GET /api/v1/users routes.
- * If query params are specified then it filter the queried results.
+ * If query params are specified then it filters the queried results.
  * Or, it returns all the GET results.
  */
 
