@@ -16,7 +16,7 @@ module.exports = (request, reply) => {
     returnChanges: true
   };
   
-  r.table('users')
+  r.table('words')
     .insert(wordPayload, options)
     .run(conn)
     .then(

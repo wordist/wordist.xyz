@@ -68,14 +68,14 @@ class WordistAdapter {
 
   getWordById (id, callback) {
     this.get(
-      '/api/v1/users/' + id,
+      '/api/v1/words/' + id,
       callback
     );
   };
 
   postWord (user, callback) {
     this.post(
-      '/api/v1/users/',
+      '/api/v1/words/',
       user,
       callback
     );
@@ -83,7 +83,7 @@ class WordistAdapter {
 
   getWords (query, callback) {
     this.get(
-      '/api/v1/users?' + encodeURI(query),
+      '/api/v1/words?' + encodeURI(query),
       callback
     );
   };
