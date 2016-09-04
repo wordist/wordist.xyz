@@ -4,6 +4,7 @@
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/wordist/Lobby)
 [![Dependency Status](https://david-dm.org/wordist/wordist.xyz.svg)](https://david-dm.org/wordist/wordist.xyz)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/wordist/wordist.xyz/master/LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/scriptnull/wordist.xyz.svg?maxAge=2592000)](https://hub.docker.com/r/scriptnull/wordist.xyz/)
 
 Unblock words. Continue conversations.
 
@@ -11,7 +12,7 @@ Unblock words. Continue conversations.
 
 - Get source code and dependencies.
 ```bash
-# via ssh 
+# via ssh
 git@github.com:wordist/wordist.xyz.git
 
 # via https
