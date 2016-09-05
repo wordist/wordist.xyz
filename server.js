@@ -21,7 +21,8 @@ const server = new Hapi.Server(config);
 const port = 8081;
 
 server.connection({
-  port: port
+  host: process.env.R_HOST || 'localhost',
+  port: process.env.R_PORT ||  port
 });
 
 const loutRegister = {
