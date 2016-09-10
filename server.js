@@ -21,8 +21,7 @@ const server = new Hapi.Server(config);
 const port = 8081;
 
 server.connection({
-  host: process.env.R_HOST || 'localhost',
-  port: process.env.R_PORT ||  port
+  port: port
 });
 
 const loutRegister = {
@@ -35,9 +34,9 @@ const loutRegister = {
 const rethinkdbRegister = {
   register: HapiRethinkdb,
   options : {
-    host : 'localhost',
-    port : 28015,
-    db : 'wordist'
+    host : process.env.R_HOST || 'localhost',
+    port : process.env.R_PORT || 28015,
+    db : process.env.R_DB || 'wordist'
   }
 };
 
