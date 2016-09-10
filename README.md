@@ -45,3 +45,6 @@ npm test
 ```
 
 Check the issue tracker, if you would like to contribute on things. Write tests for your code, if applicable.
+
+### Thanks
+Thanks for taking time to look at wordist. We really appreciate it. :heart:
