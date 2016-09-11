@@ -49,7 +49,7 @@
             <br>
             <input class="form-input input-lg col-xs-8 col-lg-8" type="password" id="password-box-register" placeholder="password" />
             <br>
-            <input class="form-input input-lg col-xs-8 col-lg-8" type="email" id="mail-box-register" placeholder="yourmail@domain.com" />
+            <input class="form-input input-lg col-xs-8 col-lg-8" type="e-mail" id="mail-box-register" placeholder="yourmail@domain.com" />
         </div>
         <br><br>
         <a href="#" class="button button-action button-pill " onClick="createUser()">SIGN UP</a>
@@ -63,9 +63,12 @@
       var uname = document.getElementById("username-box-register").value;
       var pword = document.getElementById("password-box-register").value;
       var mail = document.getElementById("mail-box-register").value;
-      console.log(uname);
-      console.log(pword);
-      console.log(mail);
+      var userData = {
+        "username" : uname,
+        "password" : pword,
+        "email" : mail
+      }
+      console.log(userData);
     }
   </script>
 </body>
