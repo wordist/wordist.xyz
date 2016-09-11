@@ -28,9 +28,9 @@
       <div id="login" class="login-portion  col-xs-5 col-lg-5">
         <h2>{{ loginMessage }} </h2>
         <div class=" col-xs-8 col-lg-12">
-            <input class="form-input input-lg col-xs-12 col-lg-12" type="text" id="username-box" placeholder="username" />
+            <input class="form-input input-lg col-xs-12 col-lg-12" type="text" id="username-box-login" placeholder="username" />
             <br>
-            <input class="form-input input-lg col-xs-12 col-lg-12" type="password" id="password-box" placeholder="password" />
+            <input class="form-input input-lg col-xs-12 col-lg-12" type="password" id="password-box-login" placeholder="password" />
         </div>
         <br>
         <label class="form-checkbox col-xs-12 col-lg-12 margin-left-15">
@@ -45,18 +45,31 @@
       <div id="register" class="register-portion col-xs-8 col-lg-11">
         <h2>{{ registerMessage }} </h2>
         <div class=" col-xs-8 col-lg-12">
-            <input class="form-input input-lg col-xs-8 col-lg-8" type="text" id="username-box" placeholder="username" />
+            <input class="form-input input-lg col-xs-8 col-lg-8" type="text" id="username-box-register" placeholder="username" />
             <br>
-            <input class="form-input input-lg col-xs-8 col-lg-8" type="password" id="password-box" placeholder="password" />
+            <input class="form-input input-lg col-xs-8 col-lg-8" type="password" id="password-box-register" placeholder="password" />
             <br>
-            <input class="form-input input-lg col-xs-8 col-lg-8" type="email" id="mail-box" placeholder="yourmail@domain.com" />
+            <input class="form-input input-lg col-xs-8 col-lg-8" type="e-mail" id="mail-box-register" placeholder="yourmail@domain.com" />
         </div>
         <br><br>
-        <a href="#" class="button button-action button-pill ">SIGN UP</a>
+        <a href="#" class="button button-action button-pill " onClick="createUser()">SIGN UP</a>
         <br><br><br>
       </div>
       <div class="col-xs-1 col-lg-1"></div>
     </div>
   </div>
+  <script>
+    function createUser(){
+      var uname = document.getElementById("username-box-register").value;
+      var pword = document.getElementById("password-box-register").value;
+      var mail = document.getElementById("mail-box-register").value;
+      var userData = {
+        "username" : uname,
+        "password" : pword,
+        "email" : mail
+      }
+      console.log(userData);
+    }
+  </script>
 </body>
 </html>
