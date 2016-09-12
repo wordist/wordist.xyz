@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="javascripts/vue.js"></script>
   <script src="javascripts/script.js"></script>
+  <script src="javascripts/jquery-3.1.0.min.js"></script>
   <link rel="icon" src="favicon.ico">
   <link href="stylesheets/custom stylesheet.css" type="text/css" rel="stylesheet">
   <link href="stylesheets/spectre.css" type="text/css" rel="stylesheet">
@@ -63,13 +64,27 @@
       var uname = document.getElementById("username-box-register").value;
       var pword = document.getElementById("password-box-register").value;
       var mail = document.getElementById("mail-box-register").value;
-      var userData = {
-        "username" : uname,
-        "password" : pword,
-        "email" : mail
-      }
-      console.log(userData);
+      var userData = JSON.stringify(
+        {
+          "username" : uname,
+          "password" : pword,
+          "email" : mail
+        });
+        $.ajax({
+            URL: 'http://wordist.xyz/api/users',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: userData,
+            success: function (data, status, xhr) {
+                alert('Successfully registered!');
+            },
+            error: function (xhr, status, error) {
+                alert('Error : Cannot register !' + error);
+            }
+        });
     }
+
   </script>
 </body>
 </html>
