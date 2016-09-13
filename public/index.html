@@ -41,7 +41,7 @@
         <br><br>
         <a href="#" class="col-xs-12 col-lg-12 margin-left-15">( forgot password ? )</a>
         <br><br>
-        <a href="#" class="button button-action button-pill ">LOGIN</a>
+        <a href="#" class="button button-action button-pill" onclick="userLogin()">LOGIN</a>
       </div>
       <div id="register" class="register-portion col-xs-8 col-lg-11">
         <h2>{{ registerMessage }} </h2>
@@ -81,6 +81,28 @@
             },
             error: function (xhr, status, error) {
                 alert('Error : Cannot register !' + error);
+            }
+        });
+    }
+    function userLogin(){
+      var uname = document.getElementById("username-box-login").value;
+      var pword = document.getElementById("password-box-login").value;
+      var uLogin = JSON.stringify(
+        {
+          "username" : uname,
+          "password" : pword,
+        });
+        $.ajax({
+            url: 'http://wordist.xyz/api/v1/login',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: uLogin,
+            success: function (data, status, xhr) {
+                alert('Successfully logged in!');
+            },
+            error: function (xhr, status, error) {
+                alert('Error : Cannot login !' + error);
             }
         });
     }
