@@ -60,6 +60,19 @@
     </div>
   </div>
   <script>
+    // window.app is the global object that will contain app related configs
+    window.app = {};
+
+    // production config
+    app.config = {
+      apiHost : 'http://wordist.xyz'
+    };
+
+    // local config ( comment this before pushing to github )
+    // app.config = {
+    //   apiHost : 'http://localhost:8081'
+    // }
+
     function createUser(){
       var uname = document.getElementById("username-box-register").value;
       var pword = document.getElementById("password-box-register").value;
@@ -71,7 +84,7 @@
           "email" : mail
         });
         $.ajax({
-            url: 'http://wordist.xyz/api/v1/users',
+            url: window.app.config.apiHost + '/api/v1/users',
             type: 'POST',
             contentType: 'application/json',
             dataType: 'json',
