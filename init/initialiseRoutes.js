@@ -22,4 +22,5 @@ module.exports = [
   }
 ]
 .concat(require('../api/v1/users/routes.js'))
-.concat(require('../api/v1/words/routes.js'));
+.concat(require('../api/v1/words/routes.js'))
+.concat(require('../api/v1/pseudo/routes.js'));
