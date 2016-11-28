@@ -15,6 +15,7 @@ install:
   - "npm install"
 
 script:
+  - echo "$DOCKER_USERNAME"
   - node ./dev-scripts/initDb.js
   - node ./dev-scripts/initTables.js
   - "npm start &"
